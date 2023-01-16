@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Collectors{% endblock %}
+
+{% block body %}
+    <h1>Edit Collectors</h1>
+
+    {{ include('collectors/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_collectors_index') }}">back to list</a>
+
+    {{ include('collectors/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Collectors{% endblock %}
+
+{% block body %}
+    <h1>Create new Collectors</h1>
+
+    {{ include('collectors/_form.html.twig') }}
+
+    <a href="{{ path('app_collectors_index') }}">back to list</a>
+{% endblock %}

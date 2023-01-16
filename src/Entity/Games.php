@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\GamesRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: GamesRepository::class)]
@@ -16,8 +17,8 @@ class Games
     #[ORM\Column(length: 255)]
     private ?string $Title = null;
 
-    #[ORM\Column]
-    private ?float $Price = null;
+    #[ORM\Column(type: Types::DECIMAL, precision: 7, scale: 2)]
+    private ?string $Price = null;
 
     public function getId(): ?int
     {
@@ -36,12 +37,12 @@ class Games
         return $this;
     }
 
-    public function getPrice(): ?float
+    public function getPrice(): ?string
     {
         return $this->Price;
     }
 
-    public function setPrice(float $Price): self
+    public function setPrice(string $Price): self
     {
         $this->Price = $Price;
 
