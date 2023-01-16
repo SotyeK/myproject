@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+ 
+
+{% block body %}
+Le produit 
+{{ data.nomProduit  }}
+à 
+{{ data.prixInitial  }}
+euros a reçu une réduction de 
+{{ data.pourcentageReduction  }}
+%. Cela vous revient donc à un prix de 
+{{ prixFinal }} euros.
+{% endblock %}
